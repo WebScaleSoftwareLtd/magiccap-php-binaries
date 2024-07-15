@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y build-essential libxml2-dev libssl-dev 
 ARG PHP_VERSION
 RUN wget https://www.php.net/distributions/php-${PHP_VERSION}.tar.gz
 RUN tar -xvf php-${PHP_VERSION}.tar.gz
-RUN cd php-${PHP_VERSION} && ./configure --disable-all --with-openssl --enable-ftp --enable-exif --enable-sockets --disable-posix --disable-cgi
+RUN cd php-${PHP_VERSION} && ./configure --disable-all --with-openssl --enable-ftp --enable-sockets --disable-posix --disable-cgi
 RUN cd php-${PHP_VERSION} && make -j$(nproc)
 RUN mv php-${PHP_VERSION}/sapi/cli/php ./php
 CMD mv php /output/php
