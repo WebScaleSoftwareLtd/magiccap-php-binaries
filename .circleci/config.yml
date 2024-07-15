@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  linux-arm64-build:
+    docker:
+      - image: cimg/base:2024.07
+    resource_class: arm.medium
+    steps:
+      - checkout
+      - run: apt-get update && apt-get install -y build-essential libxml2-dev libssl-dev libcurl4-openssl-dev pkg-config libpng-dev libjpeg-dev libfreetype6-dev libzip-dev wget
+      - run: PHP_VERSION=${CIRCLE_TAG} ./build-native.sh
+      - store_artifacts:
+          path: php
+          destination: php-${CIRCLE_TAG}-linux-arm64
+
+workflows:
+  build:
+    trigger: 
+      - push:
+          tags:
+            - '*'
+    jobs:
+      - linux-arm64-build
