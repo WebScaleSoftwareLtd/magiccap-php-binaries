@@ -55,8 +55,8 @@ jobs:
         runs-on: windows-2022
         steps:
             - uses: actions/checkout@v4
-            - name: Call the build-native.bat script
-              run: ./build-native.bat
+            - name: Call the build-native.ps1 script
+              run: ./build-native.ps1
               env:
                 PHP_VERSION: ${{ github.ref_name}}
             - name: Upload to the tag
