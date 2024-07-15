@@ -50,3 +50,17 @@ jobs:
               with:
                 name: php-macos-arm64
                 path: php
+
+    windows-x86_64-build:
+        runs-on: windows-2022
+        steps:
+            - uses: actions/checkout@v4
+            - name: Call the build-native.bat script
+              run: ./build-native.bat
+              env:
+                PHP_VERSION: ${{ github.ref_name}}
+            - name: Upload to the tag
+              uses: actions/upload-artifact@v4
+              with:
+                name: php-windows-x86_64
+                path: C:\php-sdk\php-src\sapi\cli\php.exe
