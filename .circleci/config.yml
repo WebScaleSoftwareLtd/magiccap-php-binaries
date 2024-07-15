@@ -14,10 +14,10 @@ jobs:
 
 workflows:
   build:
-    filters:
-      tags:
-        only: /^.+$/
-      branches:
-        ignore: /.*/
     jobs:
-      - linux-arm64-build
+      - linux-arm64-build:
+         filters:
+           tags:
+            only: /^.+$/
+           branches:
+            ignore: /.*/
