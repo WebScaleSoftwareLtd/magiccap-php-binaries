@@ -60,6 +60,12 @@ jobs:
               run: ./build-native.bat
               env:
                 PHP_VERSION: ${{ github.ref_name}}
+            - name: Run nmake snap
+              run: |
+                cd C:\php-sdk\php-src
+                nmake snap
+              env:
+                DIST_ZIP_DEV_PACK: php.zip
             - name: Upload to the tag
               uses: actions/upload-artifact@v4
               with:
