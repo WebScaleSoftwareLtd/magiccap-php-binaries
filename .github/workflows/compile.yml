@@ -55,10 +55,7 @@ jobs:
         runs-on: windows-2022
         steps:
             - uses: actions/checkout@v4
-            - uses: TheMrMilchmann/setup-msvc-dev@v3
-              with:
-                arch: x64
-                toolset: "14.0"
+            - uses: ilammy/msvc-dev-cmd@v1.4.1
             - name: Call the build-native.ps1 script
               run: ./build-native.ps1
               env:
