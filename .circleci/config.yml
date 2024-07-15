@@ -17,5 +17,7 @@ workflows:
     filters:
       tags:
         only: /^.+$/
+      branches:
+        ignore: /.*/
     jobs:
       - linux-arm64-build
