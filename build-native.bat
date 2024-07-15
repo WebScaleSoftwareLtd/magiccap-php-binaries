@@ -1,6 +1,6 @@
 git clone https://github.com/php/php-sdk-binary-tools.git c:\php-sdk
 chdir /d c:\php-sdk
-.\phpsdk-vs17-x64.bat
+call .\phpsdk-vs17-x64.bat
 phpsdk_buildtree phpmaster
 git clone https://github.com/php/php-src.git && cd php-src
 git checkout php-%PHP_VERSION%
