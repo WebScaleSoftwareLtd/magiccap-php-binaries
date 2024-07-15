@@ -7,4 +7,4 @@ git checkout php-%PHP_VERSION%
 SET PHP_SDK_VS=vs17
 SET PHP_SDK_ARCH=x64
 call c:\php-sdk\bin\phpsdk_deps.bat --update --branch master
-buildconf && configure --disable-all --with-openssl --enable-ftp --enable-sockets --disable-posix --disable-cgi && nmake
+buildconf && configure --disable-all --with-openssl --enable-ftp --enable-sockets --disable-posix --disable-cgi --enable-cli && nmake
