@@ -64,4 +64,4 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: php-windows-x86_64
-                path: C:\php-sdk\php-src\x64\Release_TS\php.exe
+                path: C:\php-sdk\php-src\x64\Release_TS\php.zip
