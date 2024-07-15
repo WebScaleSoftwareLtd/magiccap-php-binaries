@@ -10,7 +10,7 @@ jobs:
       - run: PHP_VERSION=${CIRCLE_TAG} ./build-native.sh
       - store_artifacts:
           path: php
-          destination: php-${CIRCLE_TAG}-linux-arm64
+          destination: php-linux-arm64
 
 workflows:
   build:
