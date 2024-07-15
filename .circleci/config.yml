@@ -15,8 +15,10 @@ jobs:
 workflows:
   build:
     trigger: 
-      - push:
-          tags:
-            - '*'
+      tags:
+        - '*'
+      branches:
+        ignore:
+          - '*'
     jobs:
       - linux-arm64-build
