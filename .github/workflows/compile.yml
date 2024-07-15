@@ -56,8 +56,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: ilammy/msvc-dev-cmd@v1.4.1
-            - name: Call the build-native.ps1 script
-              run: ./build-native.ps1
+            - name: Call the build-native.bat script
+              run: ./build-native.bat
               env:
                 PHP_VERSION: ${{ github.ref_name}}
             - name: Upload to the tag
