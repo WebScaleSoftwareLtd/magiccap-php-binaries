@@ -58,7 +58,7 @@ jobs:
             - uses: TheMrMilchmann/setup-msvc-dev@v3
               with:
                 arch: x64
-                toolset: "15.0"
+                toolset: "14.0"
             - name: Call the build-native.ps1 script
               run: ./build-native.ps1
               env:
